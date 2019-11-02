@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin')
 const webpackMerge = require('webpack-merge')
 const commonConfig = require('./webpack.common');
@@ -18,9 +18,9 @@ const config = {
 	},
 	// manifest是描述文件
 	plugins: [
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/*', 'static/']
-    }),
+    // new CleanWebpackPlugin({
+    //   cleanOnceBeforeBuildPatterns: ['**/*', 'static/']
+    // }),
 		new webpack.DllPlugin({
 			name: '[name]_dll_',
 			path: path.join(__dirname, './../dist', '[name].manifest.json')

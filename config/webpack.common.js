@@ -14,7 +14,6 @@ module.exports = {
 			{
 				test: /.(js|jsx)$/,
 				loader: 'happypack/loader?id=happybabel',
-				exclude: /node_modules/  // 排除node_modules下的文件
 			},
 			{
 				test: /\.css$/,
@@ -41,7 +40,6 @@ module.exports = {
 						}
 					},
 				],
-				// exclude: /node_modules/
 			},
 			{
 				test: /\.less$/,

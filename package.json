@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn run delete && yarn run dll:dev && yarn run dev",
-    "build": "yarn run delete && yarn run dll:prd && yarn run prd", 
+    "build": "yarn run delete && yarn run dll:prd && yarn run prd",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js  --colors",
     "prd": "cross-env NODE_ENV=production webpack --config config/webpack.build.js --colors",
     "dll:dev": "cross-env NODE_ENV=development webpack --config config/webpack.dll.js --colors --display-modules",
@@ -45,6 +45,7 @@
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
     "progress-bar-webpack-plugin": "^1.12.1",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",

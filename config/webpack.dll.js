@@ -6,7 +6,8 @@ const webpackMerge = require('webpack-merge')
 const commonConfig = require('./webpack.common');
 
 const config = {
-	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+	// mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+	mode: 'development',
 	entry: {
 		vendor: ['react', 'react-dom', 'antd', 'redux', 'react-router-dom', 'react-redux', 'react-router-redux', 'redux-thunk', 'react-loadable']
 	},

@@ -8,16 +8,9 @@ export default () => (
 	<BrowserRouter>
 		<div className='route-container'>
 			<Switch>
-				<Route path="/" render={(props) => {
-					return (
-						<CoreLayout>
-              {routes.map(route => {
-                return <Route exact key={route.path} path={route.path} component={route.component} />
-              })}
-						</CoreLayout>
-					)
-				}} />
-				
+				<CoreLayout>
+					{ routes.map( route => <Route exact key={ route.path } { ...route } /> ) }
+				</CoreLayout>			
 			</Switch>
 		</div>
 	</BrowserRouter>

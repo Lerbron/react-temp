@@ -35,7 +35,8 @@ module.exports = {
 										"android >= 4.4",
 										"bb >= 10"
 									]
-								})
+								}),
+								require('postcss-px2rem')({remUnit: 75})
 							]
 						}
 					},
@@ -61,7 +62,8 @@ module.exports = {
 										"android >= 4.4",
 										"bb >= 10"
 									]
-								})
+								}),
+								require('postcss-px2rem')({remUnit: 75})
 							]
 						}
 					},
@@ -89,7 +91,8 @@ module.exports = {
 										"android >= 4.4",
 										"bb >= 10"
 									]
-								})
+								}),
+								require('postcss-px2rem')({remUnit: 75})
 							]
 						}
 					},

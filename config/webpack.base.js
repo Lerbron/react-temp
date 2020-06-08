@@ -3,6 +3,7 @@ const path= require('path')
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 var vendorAssets = require("./../dist/vendor-assets.json")
 const commonConfig = require('./webpack.common.js');
@@ -62,6 +63,7 @@ const baseConfig = {
 			manifest: require(path.join(__dirname, './../dist', 'vendor.manifest.json')),
     }),
     
+		new FriendlyErrorsWebpackPlugin(),
 
     new MiniCssExtractPlugin({
 			filename: 'static/[name].[hash:6].css',
@@ -97,7 +99,8 @@ const baseConfig = {
         minifyURLs: true
       }
     }),
-  ]
+  ],
+	stats: "errors-only",
   
 }
 

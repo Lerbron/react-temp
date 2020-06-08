@@ -3,7 +3,8 @@ const webpack = require('webpack')
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin')
 const webpackMerge = require('webpack-merge')
-const commonConfig = require('./webpack.common');
+// const commonConfig = require('./webpack.common');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 const config = {
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -28,8 +29,12 @@ const config = {
 		new AssetsPlugin({
 			filename: 'vendor-assets.json',
 			path: path.join(__dirname, './../dist')
-		})
-	]
+		}),
+		new FriendlyErrorsWebpackPlugin(),
+	],
+	stats: "errors-only",
+	
 }
 
-module.exports = webpackMerge(commonConfig, config)
+module.exports= config
+// module.exports = webpackMerge(commonConfig, config)
